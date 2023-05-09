@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Card, Image, Row, Col, Spin, Pagination, Divider } from 'antd';
+import { Card, Image, Row, Col, Spin, Pagination} from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import './News.css';

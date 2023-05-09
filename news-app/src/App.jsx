@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Image, Menu, Pagination, Select, ConfigProvider } from "antd";
+import { Select, ConfigProvider } from "antd";
 import { countries } from "./constants/countryList";
 import { categories } from "./constants/categories";
 import { getNews } from "./features/news/newsAPI";
@@ -18,7 +18,7 @@ const { Option } = Select;
 
 const App = () => {
   const dispatch = useDispatch();
-  const { data, status, error, country, category, activePage, totalResults } =
+  const { status,country, category, activePage } =
     useSelector((state) => state.news);
 
   useEffect(() => {
@@ -39,7 +39,6 @@ const App = () => {
     dispatch(pageChanged(page));
     dispatch(getNews({ country, category, page }));
   };
-  // const check = process.env.REACT_APP_NEWS_API_KEY;
 
   console.log(process.env.REACT_APP_NEWS_API_KEY)
 
@@ -55,7 +54,6 @@ const App = () => {
       <div className="container">
         <div className="header">
           <div>
-            {/* <Image src={image} preview={false} style={{ marginRight: '1em' }} /> */}
             <h1>Headlines Today</h1>
           </div>
           <div className="activity">
